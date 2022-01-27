@@ -1,0 +1,31 @@
+<script>
+/*Este ejercicio ordena un arreglo que puede contener cualquier tipo de valor,
+devolviendo el arreglo solo con NUMEROS ordenados de mayor a menor por consola.
+
+Estudiante: Glendys León.*/
+
+let inicio=["unacadena",3,9,1,10,500,1,10,true]; //arreglo con valores de prueba
+
+console.log("Arreglo original:   ", inicio);
+
+for(let i=0; i<inicio.length; i++) {//recorro el arreglo normal
+
+            for(let i2=0;i2<inicio.length-i;i2++) {//recorro nuevamente para ordenar
+
+                if (inicio[i2]<inicio[i2+1]) {
+                    let aux;
+                    aux=inicio[i2];
+                    inicio[i2]=inicio[i2+1];
+                    inicio[i2+1]=aux;
+                }
+
+            }
+}
+
+function esNumero (valor, i2, inicio){ //evaluo los valores del arreglo en una funcion
+    return typeof valor==="number";
+}
+
+console.log("Arreglo Ordenado de mayor a menor:  ", inicio.filter(esNumero)); //muestro solo los numeros
+
+</script>

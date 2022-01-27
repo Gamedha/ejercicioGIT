@@ -1,0 +1,41 @@
+<script>
+
+/*Este ejercicio  muestra la Serie Fibonacci (en consola) 
+dada una cantidad de elementos proporcionadas por el usuario.
+
+Estudiante: Glendys León.*/
+
+    console.log(Seriefibonacci(prompt("Número de Elementos para la Serie Fibonacci:   ",   ))); 
+    // Ejecutamos la función pasándole como parámetro el numeroDeElementos 
+
+    let numeroDeElementos=0;
+  
+        function Seriefibonacci(numeroDeElementos) //Realizamos funcion para la serie fibonacci
+        {
+           //console.log(numeroDeElementos); para visualizar el valor que trae la variable
+
+           if(isNaN(numeroDeElementos)){ //Valida que el valor ingresado sea un numero
+             
+             console.log("Debe introducir un número.");
+
+           }else{
+
+                if ((numeroDeElementos>0) && (numeroDeElementos>1)) { //valida que el numero de elementos sea mayor que 0 y 1
+    
+                    let numeros=[0,1]; // la serie comienza en 0 y 1
+
+                     for (let i = 2; i < numeroDeElementos; i++) {
+                            numeros[i] = numeros[i - 1] + numeros[i - 2];
+                     }
+                     return numeros;
+
+                }else{//sino es mayor
+
+                    console.log("Debe introducir un número mayor que cero y que uno."); //mensaje por consola
+                }  
+
+             }
+     
+        } 
+
+</script>
