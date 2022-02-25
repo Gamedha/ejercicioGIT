@@ -1,0 +1,113 @@
+<script>
+
+  class Persona {
+    nombre;
+    edad;
+    constructor(nombre, edad) {
+      this.nombre = nombre;
+      this.edad = edad;
+    }
+
+    obtDetalles() {
+      console.log(this.nombre, this.edad);
+    }
+  }
+
+  const persona1 = new Persona("Yesenia", 38);
+  persona1.obtDetalles();
+
+  
+  class Estudiante extends Persona {
+    constructor(nombre, edad, calificacion = 0) {
+      super(nombre, edad);
+      this.calificacion = calificacion;
+    }
+    obtDetalles() {
+      console.log(this.nombre, this.edad, this.calificacion);
+    }
+  }
+
+  class Profesor extends Persona {
+    constructor(nombre, edad, asignatura = "JS", nivel = "Basico") {
+      super(nombre, edad);
+      this.asignatura = asignatura;
+      this.nivel = nivel;
+    }
+
+    obtDetalles() {
+      console.log(this.nombre, this.edad, this.asignatura, this.nivel);
+    }
+  }
+
+  const profesor1 = new Profesor("Leonardo", 62);
+  profesor1.obtDetalles();
+
+  const profesor2 = new Profesor("Gladys", 45, "PHP", "Junior");
+  profesor2.obtDetalles();
+
+  
+  class Grupo {
+    profesor = {};
+    promedio;
+    estudiantes = [];
+
+    constructor(profesor, estudiantes) {
+      this.profesor = profesor;
+      this.estudiantes = estudiantes;
+    }
+
+    calificar() {
+      for (let i = 0; i < this.estudiantes.length; i++) {
+        this.estudiantes[i].calificacion = Math.random() * 10;
+      }
+    }
+
+    promediar() {
+      this.calificar();
+      let contador = 0;
+      let sum = 0;
+      for (let j = 0; j < this.estudiantes.length; j++) {
+        sum = sum + this.estudiantes[j].calificacion;
+        contador = j + 1;
+      }
+      this.promedio = sum / contador;
+    }
+
+    traerDetalles() {
+      this.promediar();
+      console.log(`***Detalles del Profesor:***`);
+      for (const detalle of Object.keys(this.profesor)) {
+        console.log(`${detalle}: ${this.profesor[detalle]}`);
+      }
+
+      console.log("***Detalles de los Estudiantes***");
+      for (const detail of Object.keys(this.estudiantes)) {
+        for (const propiedad of Object.keys(this.estudiantes[detail])) {
+          console.log(`${propiedad} ${this.estudiantes[detail][propiedad]}`);
+        }
+      }
+
+      console.log(`***Promedio del Grupo***: ${this.promedio}`);
+    }
+  }
+
+  const estudiante1 = new Estudiante("Glendys", 37);
+  const estudiante2 = new Estudiante("Amelie", 17);
+  const estudiante3 = new Estudiante("Kareem", 33);
+  const estudiante4 = new Estudiante("Daniela", 22);
+  const estudiante5 = new Estudiante("Mercedes", 19);
+  const estudiante6 = new Estudiante("Alberto", 40);
+
+  const arrayEstudiantes = [
+    estudiante1,
+    estudiante2,
+    estudiante3,
+    estudiante4,
+    estudiante5,
+    estudiante6,
+  ];
+
+  const grupo1 = new Grupo(profesor1, arrayEstudiantes);
+  grupo1.traerDetalles();
+
+</script>

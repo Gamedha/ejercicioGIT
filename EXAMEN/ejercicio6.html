@@ -1,0 +1,37 @@
+<script>
+
+ 
+let palabra = "casa";
+
+  function combinaciones(palabra) {
+    let text = palabra;
+    if (palabra.length > 3) {
+      text = palabra.slice(0, 3);
+    }
+
+    for (let i = 0; i < 3; i++) {
+     generar(i, text);
+    }
+  }
+
+  function generar(indice, text) {
+    let txt = text[indice];
+    let txt2 = text[indice];
+
+    for (let i = 0; i < 3; i++) {
+      if (i === indice) continue;
+      txt = txt + text[i];
+    }
+    for (let i = 2; i >= 0; i--) {
+      if (i === indice) continue;
+      txt2 = txt2 + text[i];
+    }
+
+    console.log(txt);
+    console.log(txt2);
+  }
+
+  combinaciones(palabra);
+
+
+</script>
