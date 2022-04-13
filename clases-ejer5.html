@@ -1,0 +1,100 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <script>
+
+    class Persona{
+      constructor(nombre,edad){
+        this.nombre = nombre;
+        this.edad = edad;
+      }
+      obtDetalles(){
+        console.log("el nombre es: "+this.nombre+" y la edad es: "+this.edad);
+      }
+    }
+
+    class Estudiante extends Persona{
+      constructor(nombre,edad,calificacion){
+          super(nombre,edad);
+          this.calificacion = calificacion;
+      }
+      obtDetalles(){
+        super.obtDetalles();
+        console.log("la calificacion es: "+this.calificacion);
+      }
+    }
+    
+    class Profesor extends Persona{
+      constructor(nombre,edad,asignatura = 'JS',nivel = 'basico'){
+        super(nombre,edad);
+        this.asignatura = asignatura;
+        this.nivel = nivel;
+      }
+      obtDetalles(){
+        super.obtDetalles();
+        console.log("La asignatura es: "+this.asignatura+" y el nivel: "+this.nivel);
+      }
+    }
+
+    class Grupo{
+      //profesor = obj Profesor
+      //promedio = Random
+      //estudiantes = array
+      
+      constructor(profesor,promedio,estudiantes){
+        this.profesor = profesor;
+        this.promedio = promedio;
+        this.estudiantes = estudiantes;
+      }
+
+      calificar(){
+        var estudiante = [];
+        for(var i = 0 ; i< this.estudiantes.length ; i++){
+          let calif = Math.floor(Math.random()*10);
+          this.estudiantes[i].calificacion = calif;
+          console.log("El estudiante:" + this.estudiantes[i].nombre+" recibe calif de: " + calif);
+        }
+      }
+
+      calcPromedio(){
+        this.promedio = 0;
+        for (var x = 0; x < this.estudiantes.length ; x++){
+          this.promedio = this.promedio + this.estudiantes[x].calificacion;
+        }
+        this.promedio = this.promedio / this.estudiantes.length;
+        console.log("promedio es: "+this.promedio); 
+      }
+
+      obtDetalles(){
+        console.log("Detalle del profesor");
+        console.log(this.profesor);
+        console.log("Detalles de los alumnos");
+        for(var o = 0 ; o < this.estudiantes.length ; o++){
+          console.log(this.estudiantes[o]); 
+        }
+      }
+    }
+    var objProfe = new Profesor("El prof",30,'JS','Intermedio');
+    var arrEstudiantes = [];
+    arrEstudiantes.push(new Estudiante("Estud 1",20,9));
+    arrEstudiantes.push(new Estudiante("Estud 2",21,8));
+    arrEstudiantes.push(new Estudiante("Estud 3",22,7));
+    arrEstudiantes.push(new Estudiante("Estud 4",23,9));
+    arrEstudiantes.push(new Estudiante("Estud 5",24,10));
+    arrEstudiantes.push(new Estudiante("Estud 6",24,9));
+  
+    var objGrupo = new Grupo(objProfe,(Math.random()*10),arrEstudiantes);
+    console.log(objGrupo.calificar());
+
+    console.log(objGrupo.calcPromedio());
+
+    console.log(objGrupo.obtDetalles());
+
+  </script>
+</body>
+
+</html>
