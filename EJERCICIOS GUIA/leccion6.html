@@ -1,0 +1,30 @@
+<script>
+/*-Desarrollar un programa que muestre la tabla de multiplicar de un
+número dado (del 1 al 50).
+-Si la tabla de multiplicar ser la de 3, deberá mostrar:
+1 x 3 = 3
+2 x 3 = 6
+…..
+50 x 3 = 150*/
+
+numbermult=prompt("Ingrese un numero del 1 al 50", );
+numbermult=parseInt(numbermult);
+
+if(!isNaN(numbermult)&&(numbermult<=50)){
+    
+    console.log("TABLA DEL "+numbermult+'\n');
+
+    for(let i=1;i<=10;i++){
+            tabla=numbermult*i;
+            console.log(numbermult+"x"+i+"= "+tabla);
+    }
+
+}else{
+    alert("El dato ingresado tiene que ser un numero y estar comprendido entre 1-50");
+}
+
+
+
+
+
+</script>

@@ -1,0 +1,34 @@
+<script>
+/*Dada una cadena realizar lo siguiente:
+● invertir la misma y mostrar por pantalla. Ejemplo:
+Entrada: "casa blanca"
+Salida: "acnalb asac"
+
+● verificar cuántas veces se repite el carácter car en la cadena cad, por
+ejemplo:
+Entrada: cad = "casa blanca", car = 'a'
+Salida: El caracter 'a' se repite 4 veces*/
+
+let cadena="casa blanca";
+
+let entrada1= cadena.split('');
+let salida1=entrada1.reverse().join('');
+
+console.log("**Cadena Invertida**");
+console.log(cadena);
+console.log(salida1);
+
+var letra = /[a]/g;
+let contletra=0;
+for(let i=0;i<entrada1.length; i++){
+    if(entrada1[i]==entrada1[i].match(letra)){
+        contletra=contletra+1;
+    }
+}
+console.log(" ");
+console.log("**Cantidad de Letras 'a' **");
+console.log(cadena);
+console.log("El caracter 'a' se repite: "+contletra+  "  veces.");
+
+
+</script>
