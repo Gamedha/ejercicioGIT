@@ -1,0 +1,51 @@
+<script>
+/*Escribir un programa en javascript para calcular el teorema de pitagoras*/
+
+class Pitagoras{
+    
+    constructor (hipotenusa,cadyacente,copuesto){
+
+        this.hipotenusa=parseInt(hipotenusa);
+        this.cadyacente=parseInt(cadyacente);
+        this.copuesto=parseInt(copuesto);
+
+        if(this.hipotenusa==0){
+            this.hipotenusa= Math.sqrt((this.cadyacente**2)+(this.copuesto**2)+'\n');
+            this.sies=1;
+        }else{
+            if(this.cadyacente==0){
+                this.cadyacente=Math.sqrt((this.hipotenusa**2)-(this.copuesto**2)+'\n');
+                this.sies=2;
+            }else{
+                if(this.copuesto==0){
+                    this.copuesto=Math.sqrt((this.hipotenusa**2)-(this.cadyacente**2)+'\n'); 
+                    this.sies=3;
+                }   
+            }
+        }
+     }
+
+    getDetalles(){ //metodo get para mostrar datos
+
+        if(this.sies==1){
+            console.log("h= √("+this.cadyacente+")²+("+this.copuesto+")²");
+            console.log("La hipotenusa es: "+'\n'+this.hipotenusa);
+        }
+
+        if(this.sies==2){
+            console.log("ca= √("+this.hipotenusa+")²-("+this.copuesto+")²");
+            console.log("El cateto adyacente es: "+'\n'+this.cadyacente);
+        }
+
+        if(this.sies==3){
+            console.log("co= √("+this.hipotenusa+")²+("+this.cadyacente+")²");
+            console.log("El cateto opuesto es: "+'\n'+this.copuesto);
+            
+        }
+
+    }
+}
+    var objPita= new Pitagoras("8","3","0"); //instanciando clase Pitagoras
+    console.log(objPita.getDetalles());
+
+</script>

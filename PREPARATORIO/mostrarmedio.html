@@ -1,0 +1,31 @@
+<script>
+    /*Recibir una cadena de numeros por el prompt y mostrar unicamente los que estan en
+    el medio de esa sucesion, por ejemplo reciben 8,5,4,11,2,6  y unicamente se deben 
+    mostrar 5,4,11,2*/
+
+    const recibidos=[];
+    const final=[];
+
+    const cant=parseInt(prompt("Ingrese la cantidad de numeros para la sucesion", ));
+
+    for(let i=0;i<cant;i++){
+        const numers=parseInt(prompt("Ingrese un numero", ));
+        
+        if(!isNaN(numers)){
+            recibidos.push(numers);
+        }else{
+            alert("Debe ingresar solo numeros");
+            i=i-1;
+        }
+    
+        final.push(recibidos[i]);
+    
+    }
+
+    let p =final.shift();
+    let f =final.pop();
+
+    console.log("Los numeros ingresados son: "+ "["+recibidos+"]");
+    console.log("Los numeros del medio son: "+ "["+final+"]");
+
+</script>

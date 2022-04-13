@@ -1,0 +1,19 @@
+<script>
+/* Generar un script que pida  6 numeros por medio del prompt,
+los meta en un array y lo muestre en consola*/
+
+let numingre=[];
+
+for(let i=0;i<6;i++){
+    const numers=parseInt(prompt("Ingrese un numero", ));
+    if(!isNaN(numers)){
+        numingre.push(numers);
+    }else{
+        alert("Debe ingresar solo numeros");
+        i=i-1;
+    }
+    
+}
+console.log("Los numeros ingresados son: "+ "["+numingre+"]");
+
+</script>

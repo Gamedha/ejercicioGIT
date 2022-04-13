@@ -1,0 +1,103 @@
+<script>
+
+/*Dado un vector de enteros, comprobar el mayor,
+ el menor y por último la media de todos.*/
+
+number="5,99,43,12,37";
+
+var array =number.split(',');
+var mayor=-Infinity;
+var menor=+Infinity;
+var suma=0;
+var media=0;
+
+//SUMA
+for(i=0;i<array.length;i++){
+    suma=parseInt(array[i])+suma;
+}
+
+//MEDIA
+media=suma/array.length;
+
+//MENOR
+for(i=0;i<array.length;i++){
+    if(parseInt(array[i])<menor) menor=array[i];
+    }
+
+    //MAYOR
+for(i=0;i<array.length;i++){
+    if(parseInt(array[i])>mayor) mayor=array[i];
+}
+
+console.log("El numero mayor es:  ", mayor);
+console.log("El numero menor es:  ", menor);
+console.log("La suma de todos los numeros es:  ", suma);
+console.log("La media de todos los numeros es:  ", media);
+
+
+/*Dada una oracion larga (puede contener numero, letras, caracteres especiales,
+espacios en blanco) sumar por renglones y mostrar los resultados en la consola)*/
+
+oracion="Muestrelos7 todos (:,*,;etc124.!.) en una forma adecuada."; //\n
+
+let arrayorar=oracion.split('');
+
+console.log("Oración larga:   ",oracion);
+console.log("Oracion en reversa: ", arrayorar.reverse().join(''));
+console.log(arrayorar);
+console.log(arrayorar.length);
+
+
+let contadorletras=0;
+let contadornum=0;
+let contadorespacios=0;
+let contadorotros=0;
+let contadorvocales=0;
+
+
+for(let i=0;i<arrayorar.length; i++){
+
+    //espacios
+    if(arrayorar[i]==' '){
+        contadorespacios=contadorespacios+1;
+    }
+
+    //caracteres especiales
+    noes=/[^A-Za-z0-9_]/
+    if(arrayorar[i]==arrayorar[i].match(noes)){
+        contadorotros=contadorotros+1;
+    }
+   
+    //numeros
+    n=/[0-9]/
+     if(arrayorar[i]==arrayorar[i].match(n)){
+        contadornum=contadornum+1;
+     }
+
+     //letras
+     le= /[A-Za-z]/
+     if(arrayorar[i]==arrayorar[i].match(le)){
+        contadorletras=contadorletras+1;
+     }
+
+    var vocales = /[aeiouy]/g;
+
+    if(arrayorar[i]==arrayorar[i].match(vocales)){
+        contadorvocales=contadorvocales+1;
+     }
+   
+     }
+
+
+//mostrar resultados
+
+console.log("Cantidad de caracteres hasta la primera ',':",oracion.split(',')[0].length); 
+
+console.log("Cantidad de letras: ",contadorletras);
+console.log("Cantidad de numeros: ",contadornum);
+console.log("Cantidad de espacios en blanco: ", contadorespacios);
+console.log("Cantidad de otros caracteres: ",contadorotros-contadorespacios);
+console.log("Cantidad de vocales en minuscula: ", contadorvocales);
+
+
+</script>

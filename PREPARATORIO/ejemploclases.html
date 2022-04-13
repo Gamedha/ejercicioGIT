@@ -1,0 +1,34 @@
+<script>
+
+/*Clases, metodos,herencia, intancia*/
+
+class Npc{ //creando clase
+
+constructor(nombre,edad){ //metodo constructor de la clase Npc
+    this.nomb=nombre;
+    this.ed=edad;
+}
+
+getDetalles(){ //metodo get para mostrar datos
+    console.log("El nombre es: "+this.nomb);
+    console.log("Y su edad es: "+this.ed);
+}
+}
+
+class Personaje extends Npc{ //creando clase que hereda del padre
+
+   constructor(nombre,edad,profesion){ //metodo constructor de la clase Personaje
+       super(nombre,edad);
+       this.prof=profesion;
+    }
+
+ getDetalles(){ //metodo get para mostrar datos
+    super.getDetalles(); //trae detalles del padre
+    console.log( "y su profesion es:  "+this.prof)
+}
+}
+
+var objPerso= new Personaje("Azuna","17","Espadachin"); //instanciando clase Personaje
+console.log(objPerso.getDetalles());
+
+</script>

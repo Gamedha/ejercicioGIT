@@ -1,0 +1,22 @@
+<script>
+/*  Mostrar en consola la tabla de multiplicar de un numero dado en el prompt
+Ejemplo: numero dado el 5 mostrar
+5x1=5
+5x2=10... asi sucesivamente */
+
+numbermult=prompt("Ingrese un numero del 1 al 10", );
+numbermult=parseInt(numbermult);
+
+if(!isNaN(numbermult)&&(numbermult<=10)){
+    
+    console.log("TABLA DEL "+numbermult+'\n');
+
+    for(let i=1;i<=10;i++){
+            tabla=numbermult*i;
+            console.log(numbermult+"x"+i+"= "+tabla);
+    }
+
+}else{
+    alert("El dato ingresado tiene que ser un numero y estar comprendido entre 1-10");
+}
+</script>

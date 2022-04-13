@@ -1,0 +1,59 @@
+<script>
+
+/*Determinar si un numero de tres digitos es Armstrong. Ejemplo: 1(al cubo)+5(al cubo)+3(al cubo)=153 */
+
+let sum=0;
+let number=153;
+
+// variable temporal
+let temp = number;
+
+while (temp > 0) {
+    // encontrando cada digito
+    let resto = temp % 10;
+
+    //sum += resto * resto * resto;
+    sum += resto **3;
+
+    // quitamdo el ultimo digito para el numero
+    temp = parseInt(temp / 10); // convirtiendo a entero
+}
+
+// verificar si es un numero amrstrong
+if (sum == number) {
+    console.log(`${number} Es un numero Amrstrong`);
+    console.log(' ');
+}
+else {
+    console.log(`${number} No es un numero Amrstrong.`);
+    console.log(' ');
+}
+
+/*Numeros Arsmtrong entre el 100 y el 999*/
+
+for(let i=100; i<=999; i++){
+
+        let sum2=0;
+        let numdig= i.toString().length;
+        let temp2 = i;
+
+        while (temp2 > 0) {
+        // encontrando cada digito
+        let restos = temp2 % 10;
+
+        sum2 += restos **numdig;
+
+        // quitamdo el ultimo digito para el numero
+        temp2 = parseInt(temp2 / 10); // convirtiendo a entero
+        }
+
+        // verificar si es un numero amrstrong
+        if (sum2 == i) {
+            console.log(`${i} Es un numero Amrstrong`);
+        }
+        /*else {
+            console.log(`${i} No es un numero Amrstrong.`);
+        }*/
+}
+
+</script>

@@ -1,0 +1,23 @@
+<script>
+/*Definir un array de numeros cualesquiera, pedir  un valor numerico por prompt
+y en caso de que ese numero se encuentre en el array definido antes muestra un 
+alert con el mensaje de que el numero proporcionado se encuentra en el arreglo*/
+
+const cualquier=[26,9,8,4,10,47,19,3,25,1,6];
+
+const solicitado=parseInt(prompt("Ingrese el numero de su preferencia", ));
+
+if(!isNaN(solicitado)){
+
+    for(let i=0;i<cualquier.length;i++){
+
+        if(cualquier[i]==solicitado){
+            alert("El numero esta en el arreglo");
+        }
+}
+    //console.log(solicitado);
+}else{
+    alert("El dato ingresado tiene que ser un numero");
+}
+
+</script>

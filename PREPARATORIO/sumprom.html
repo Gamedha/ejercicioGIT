@@ -1,0 +1,33 @@
+<script>
+/*Utilizando un ciclo mostrar la suma y el promedio de los numeros ingresados
+hasta que ingrese un numero negativo y ahi mostrar los resultados, usar funcion prompt*/
+
+const rec=[];
+let cont=0;
+let acum=0;
+let prom=0;
+
+cont=parseInt(prompt("Ingrese la cantidad de numeros que desee", ));
+
+    for(let i=0;i<cont;i++){
+
+            const numers=parseInt(prompt("Ingrese un numero", ));
+        
+            if(numers>0){
+                
+                if(!isNaN(numers)){
+                    rec.push(numers);
+                }
+                 acum=acum+rec[i];
+            }else{
+                break;
+            }
+    }
+    prom=acum/rec.length;
+
+    console.log("Los numeros ingresados son: "+ "["+rec+"]");
+    console.log("La suma de los numeros es: " +acum);
+    console.log("El promedio de los numeros es: "+prom);
+
+
+</script>

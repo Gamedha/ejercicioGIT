@@ -1,0 +1,48 @@
+<script>
+/*Mostrar todos los numeros que son impares n un arreglo de puros numeros
+Ejemplo: arr=[5,2,2,4,6,8] la salida seria: 5, 
+ademas los numeros primos y no primos*/
+
+let arr=[1,2,3,4,5,6,7,8,9,10];
+
+let par=[];
+let impar=[];
+let primos=[];
+let noprimos=[];
+let j=1;
+
+for(let i=0;i<arr.length;i++){
+    if(i%2==0){
+        impar.push(arr[i]);
+    }else{
+        par.push(arr[i]);
+    }
+
+    for(j;j<arr.length;j++){
+        if(primo(arr[j])){
+            primos.push(arr[j]);
+        }else{
+            noprimos.push(arr[j]);
+    }
+}
+}
+
+function primo(numero) {
+    for(var i=2;i<numero;i++){
+        if(numero%i===0){
+            return false;
+        }
+    }
+    return numero!==1;
+}
+console.log("Los numeros pares son: "+ par);
+console.log("Los numeros impares son: "+ impar);
+
+//numeros primos y no primos
+
+
+console.log('\n');
+console.log("Los numeros primos son: "+ primos);
+console.log("Los numeros no primos son: "+ noprimos);
+
+</script>

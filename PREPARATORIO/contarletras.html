@@ -1,0 +1,19 @@
+<script>
+/*Ejercicio 1. Contar el numero de letras de un string antes del primer ".",
+por motivos practicos usar ciclos en el ejercicio.*/
+
+let frase="Hola mundo. Soy genial";
+let contador=0;
+
+for(let i=0; i<=frase.length; i++){
+    if(frase[i]==='.'){
+        break;
+    }
+    contador ++;
+}
+
+console.log("Cantidad de letras antes del .", frase.length);
+console.log("Cantidad de letras hasta el .", contador);
+console.log("Cantidad de letras despues del .", frase.split('.')[0].length);
+
+</script>

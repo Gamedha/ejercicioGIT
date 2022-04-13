@@ -1,0 +1,40 @@
+<script>
+    /*Realizar una calculadora, utilizando funciones para encapsular las operaciones:
+    suma, resta, multiplicacion, division. Se debe recibir por prompt 2 numeros,
+    despues con texto o el simbolo de la operacion que se debe realizar, y mostrar
+    el resultado en un alert */
+
+    const operador=prompt("Ingrese el operador para calcular (+,-,* o /)");
+
+
+    const numero1=parseFloat(prompt("Ingrese el primer numero", ));
+    const numero2=parseFloat(prompt("Ingrese el segundo numero", ));
+
+    let fc=operaciones(operador,numero1,numero2);
+
+    function operaciones(oper,num1,num2) {
+
+        if(oper=='+'){
+        resultado=num1+num2;
+        return resultado;
+        }
+    
+        if(oper=='-'){
+            resultado=num1-num2;
+             return resultado;
+        }
+        
+        if(oper=='*'){
+            resultado=num1*num2;
+             return resultado;
+        }
+
+        if(oper=='/'){
+            resultado=num1/num2;
+            return resultado;
+        }
+               
+    }
+
+    alert("El resultado es:  "+ resultado);
+</script>
